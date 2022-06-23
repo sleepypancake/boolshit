@@ -1,0 +1,47 @@
+@import url("./assets/fonts/fonts.css");
+@import url("./assets/helpers/normalize.css");
+@import url("./assets/helpers/variables.css");
+
+@import url("./assets/styles/calculator.css");
+
+*, *::before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+  }
+  
+::-ms-clear {
+    display: none;
+}
+
+body {
+    font-family: 'MuseoSans', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+}
+
+body.state_fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input, textarea {
+    font-family:  'MuseoSans';
+}
+
+/* components */

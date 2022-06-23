@@ -1,0 +1,17 @@
+/* main colors */
+:root {
+    --black: #333333;
+    --white: #fff;
+    --dark-font: #3A393C;;
+    --grey-font: #ababab;
+
+    --primary-color: #309B42;
+    
+    --default-grey: #dedede;
+    --hover-grey: #cacaca;
+    
+    --danger: #FF4F4F;
+    
+    /* border-radius */
+    --bdr: 4px;
+}

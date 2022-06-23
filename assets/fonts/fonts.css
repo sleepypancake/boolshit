@@ -1,0 +1,13 @@
+
+/* MuseoSans */
+@font-face {
+  font-family: 'MuseoSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./museosanscyrl300.eot'); /* IE9 Compat Modes */
+  src: url('./museosanscyrl300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./museosanscyrl300.woff') format('woff'), /* Modern Browsers */
+       url('./museosanscyrl300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./museosanscyrl300.svg') format('svg'); /* Legacy iOS */
+}
+

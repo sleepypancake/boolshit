@@ -1,0 +1,66 @@
+// main colors
+
+$white: #fff;
+$black: #333;
+$dark-font: #3A393C;
+$grey-font: #ababab;
+
+$default-grey: #dedede;
+$hover-grey: #cacaca;
+
+$primary-color: #309B42;
+$danger: #FF4F4F;
+
+// border-radius
+$bdr: 4px;
+
+.calculator {
+    margin: 60px auto 100px;
+    width: 100%;
+    max-width: 1260px;
+
+    &__title {
+        font-size: 24px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__calc {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 460px;
+    }
+
+    &__subtitle {
+        margin-bottom: 4px;
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 500; 
+    }
+
+    &__tabs {
+        display: flex;
+        margin-bottom: 28px;
+
+        &.calculator__tab {
+            font-size: 14px;
+            color: opacify($black, 0.7);
+            background: $white;
+            padding: 16px 31px;
+            border: 1px solid $primary-color;
+            &:first-child {
+                border-radius: $bdr 0 0 $bdr;
+            }
+            &:last-child {
+                border-radius: 0 $bdr $bdr 0;
+            }
+        }
+    }
+}

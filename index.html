@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кальки</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="calculator">
+        <p class="calculator__title">Рассчитать ипотеку</p>
+        <div class="calculator__container">
+            <div class="calculator__calc">
+                <p class="calculator__subtitle">Вид ипотеки:</p>
+                <div class="calculator__tabs">
+                    <div class="calculator__tab" data-tab="family">Семейная</div>
+                    <div class="calculator__tab" data-tab="it">IT ипотека </div>
+                    <div class="calculator__tab"  data-tab="gospod">Гос поддержка 2022</div>
+                </div>
+                <form action="" class="calculator__form">
+                    <div class="calculator__field">
+                        <span>Стоимость квартиры</span>
+                        <div class="calculator__fake-input">
+                            <span>2 120 000</span>
+                        </div>
+                    </div>
+                    <div class="calculator__field">
+                        <div class="calculator__fake-input">
+                            <output name="first-payment-res">60</output>
+                            <input type="range" name="first-payment" value="898246" min="800000" max="5389474"/>
+                        </div>
+                    </div>
+                    <div class="calculator__field">
+                        <div class="calculator__fake-input">
+                            <output name="credit-length-res">1 год</output>
+                            <input type="range" name="credit-length" value="1" min="1" max="30"/>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <button class="btn calculator__btn"></button>
+                </form>
+            </div>
+            <div class="calculator__data">
+                <p class="calculator__subtitle">Семейная ипотека с субсидированием</p>
+                <p class="calculator__highlight"><span class="highlighted">Ипотека</span>для всех семей с детьми на условиях поддержки субсидированием</p>
+                <div class="calc-card calc-card--standart">
+                    <p class="calc-card__title">Субсидирование на 1-2 года </p>
+                    <div class="calc-card__grid">
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Ежемесячный платеж</span>
+                            <span class="calc-card__grid-col-value">12 870 ₽</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Процентная ставка</span>
+                            <span class="calc-card__grid-col-value highlighted">от 0,1%</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Срок субсидирования</span>
+                            <span class="calc-card__grid-col-value">от 1 года</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">К стоимости квартиры</span>
+                            <span class="calc-card__grid-col-value">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-card calc-card--best">
+                    <p class="calc-card__title">Субсидирование на 1-2 года </p>
+                    <div class="calc-card__grid">
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Ежемесячный платеж</span>
+                            <span class="calc-card__grid-col-value">12 870 ₽</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Процентная ставка</span>
+                            <span class="calc-card__grid-col-value highlighted">от 0,1%</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Срок субсидирования</span>
+                            <span class="calc-card__grid-col-value">от 1 года</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">К стоимости квартиры</span>
+                            <span class="calc-card__grid-col-value">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-card calc-card--basic">
+                    <p class="calc-card__title">Субсидирование на 1-2 года </p>
+                    <div class="calc-card__grid">
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Ежемесячный платеж</span>
+                            <span class="calc-card__grid-col-value">12 870 ₽</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Процентная ставка</span>
+                            <span class="calc-card__grid-col-value highlighted">от 0,1%</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">Срок субсидирования</span>
+                            <span class="calc-card__grid-col-value">от 1 года</span>
+                        </div>
+                        <div class="calc-card__grid-col">
+                            <span class="calc-card__grid-col-name">К стоимости квартиры</span>
+                            <span class="calc-card__grid-col-value">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>
