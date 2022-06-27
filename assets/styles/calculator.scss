@@ -149,6 +149,8 @@ $bdr: 4px;
                 }
             }
 
+            
+
             input[type="range"] {
                 display: block;
                 -webkit-appearance: none;
@@ -171,6 +173,7 @@ $bdr: 4px;
                     border-radius: 50%;
                     cursor: pointer;
                     transition: ease-in-out 0.3s;
+                    z-index: 11;
 
                     &:hover {
                         background-image: url(../icons/range-hover.svg);
@@ -178,30 +181,43 @@ $bdr: 4px;
 
                     &:active {
                         background-image: url(../icons/range-active.svg);
-                        transform: scale(1.5);
 
                         
                     }
                 }
-                ​
+
+                & + span {
+                    color: $black;
+                }
+                
                 &.active {
-                    &~.range-value {
+                    & + span {
+                        color: $black;
+                    }
+
+                    &~.range-progress {
                         background: $primary-color-active;
                     }
                 }
 
                 &.disabled {
                     pointer-events: none;
-                    &~.range-value {
+
+                    & + span {
+                        color: $grey-font;
+                    }
+
+                    &~.range-progress {
                         background: $grey-font;
                     }
+
                     &::-webkit-slider-thumb {
                         background-image: url(../icons/range-disabled.svg);
                     }
                 }
             }
 
-            .range-value {
+            .range-progress {
                 display: inline-block;
                 height: 1px;
                 background: $primary-color;
