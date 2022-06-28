@@ -49,6 +49,10 @@ class TabsSwitcher {
             success: (data) => {
                this.appendDataToTabs(data, item)
             },
+            error: ({err}) => {
+                alert('Что-то пошло не так...')
+                throw Error(err)
+            }
             
         });
     }
@@ -84,7 +88,7 @@ class TabsSwitcher {
      * @returns {string}
      */
      getLocaleStringFromNumber(num) {
-        return parseInt([...num].map(item => item.trim()).join('')).toLocaleString()
+        return parseInt([...num.replace(/[^0-9]/g, '')].map(item => item.trim()).join('')).toLocaleString()
     }
 
     init() {

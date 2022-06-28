@@ -160,18 +160,18 @@
   width: 100%;
 }
 
-.calculator__form .calculator__field {
+.calculator__field {
   margin-bottom: 20px;
   position: relative;
 }
 
-.calculator__form .calculator__field span {
+.calculator__field span {
   font-size: 12px;
   color: #ababab;
   margin-bottom: 4px;
 }
 
-.calculator__form .calculator__field .calculator__fake-input, .calculator__form .calculator__field .calculator__input {
+.calculator__field .calculator__fake-input, .calculator__field .calculator__input {
   padding: 12px;
   border: 1px solid #dedede;
   border-radius: 4px;
@@ -181,23 +181,23 @@
   position: relative;
 }
 
-.calculator__form .calculator__field .calculator__fake-input span, .calculator__form .calculator__field .calculator__input span {
+.calculator__field .calculator__fake-input span, .calculator__field .calculator__input span {
   font-size: 16px;
 }
 
-.calculator__form .calculator__field .calculator__fake-input:hover, .calculator__form .calculator__field .calculator__input:hover {
+.calculator__field .calculator__fake-input:hover, .calculator__field .calculator__input:hover {
   border-color: #cacaca;
 }
 
-.calculator__form .calculator__field .calculator__fake-input.disabled, .calculator__form .calculator__field .calculator__input.disabled {
+.calculator__field .calculator__fake-input.disabled, .calculator__field .calculator__input.disabled {
   color: #dedede;
 }
 
-.calculator__form .calculator__field .calculator__fake-input.error, .calculator__form .calculator__field .calculator__input.error {
+.calculator__field .calculator__fake-input.error, .calculator__field .calculator__input.error {
   border-color: #FF4F4F;
 }
 
-.calculator__form .calculator__field input[type="range"] {
+.calculator__field input[type="range"] {
   display: block;
   -webkit-appearance: none;
   width: calc(100% - 8px);
@@ -212,7 +212,7 @@
   z-index: 10;
 }
 
-.calculator__form .calculator__field input[type="range"]::-webkit-slider-thumb {
+.calculator__field input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: #309B42;
   background-image: url(../icons/range-default.svg);
@@ -225,45 +225,45 @@
   z-index: 11;
 }
 
-.calculator__form .calculator__field input[type="range"]::-webkit-slider-thumb:hover {
+.calculator__field input[type="range"]::-webkit-slider-thumb:hover {
   background-image: url(../icons/range-hover.svg);
 }
 
-.calculator__form .calculator__field input[type="range"]::-webkit-slider-thumb:active {
+.calculator__field input[type="range"]::-webkit-slider-thumb:active {
   background-image: url(../icons/range-active.svg);
 }
 
-.calculator__form .calculator__field input[type="range"][data-type="number"] + .calculator__input-progress::after {
+.calculator__field input[type="range"][data-type="number"] + .calculator__input-progress::after {
   content: '₽';
   color: #ababab;
   padding-left: 8px;
 }
 
-.calculator__form .calculator__field input[type="range"].active + span {
+.calculator__field input[type="range"].active + span {
   color: #333;
 }
 
-.calculator__form .calculator__field input[type="range"].active ~ .range-progress {
+.calculator__field input[type="range"].active ~ .range-progress {
   background: #00BE20;
 }
 
-.calculator__form .calculator__field input[type="range"].disabled {
+.calculator__field input[type="range"].disabled {
   pointer-events: none;
 }
 
-.calculator__form .calculator__field input[type="range"].disabled + span {
+.calculator__field input[type="range"].disabled + span {
   color: #ababab;
 }
 
-.calculator__form .calculator__field input[type="range"].disabled ~ .range-progress {
+.calculator__field input[type="range"].disabled ~ .range-progress {
   background: #ababab;
 }
 
-.calculator__form .calculator__field input[type="range"].disabled::-webkit-slider-thumb {
+.calculator__field input[type="range"].disabled::-webkit-slider-thumb {
   background-image: url(../icons/range-disabled.svg);
 }
 
-.calculator__form .calculator__field .range-progress {
+.calculator__field .range-progress {
   display: inline-block;
   height: 1px;
   background: #309B42;
@@ -412,5 +412,104 @@
 
 .calculator__card__info-col-value[data-type="percent"] {
   font-weight: 600;
+}
+
+.calculator .calc-popup {
+  display: none;
+}
+
+.calculator .calc-popup--active {
+  display: block;
+}
+
+.calculator .calc-popup__body {
+  position: fixed;
+  width: 550px;
+  top: 47%;
+  left: 50%;
+  right: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+}
+
+.calculator .calc-popup__bg {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.calculator .calc-popup__close {
+  position: absolute;
+  right: -50px;
+  top: -40px;
+  width: 32px;
+  height: 32px;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+
+.calculator .calc-popup__close:hover:before, .calculator .calc-popup__close:hover:after {
+  background-color: #fff;
+}
+
+.calculator .calc-popup__close:before, .calculator .calc-popup__close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #dadada;
+}
+
+.calculator .calc-popup__close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.calculator .calc-popup__close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.calculator .calc-popup__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.calculator .calc-popup__message {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #3A393C;
+}
+
+.calculator .calc-popup__btn {
+  max-width: 300px;
+  color: #fff;
+  background: #309B42;
+  margin-top: 10px;
+}
+
+.calculator .calc-popup__btn:hover, .calculator .calc-popup__btn:active {
+  color: #309B42;
+  background: #fff;
+}
+
+.calculator .calc-popup__btn:disabled {
+  background-color: #fff;
+  color: #ababab;
+  border-color: #ababab;
+  pointer-events: none;
 }
 /*# sourceMappingURL=calculator.css.map */

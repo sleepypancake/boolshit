@@ -133,128 +133,129 @@ $bdr: 4px;
 
     &__form {
         width: 100%;
+    }
 
-        .calculator__field {
-            margin-bottom: 20px;
+
+    &__field {
+        margin-bottom: 20px;
+        position: relative;
+
+        span {
+            font-size: 12px;
+            color: $grey-font;
+            margin-bottom: 4px;
+        }
+
+        .calculator__fake-input,  .calculator__input {
+            padding: 12px;
+            border: 1px solid $default-grey;
+            border-radius: $bdr;
+            width: 100%;
+            color: $dark-font;
+            font-family: inherit;
             position: relative;
 
             span {
-                font-size: 12px;
-                color: $grey-font;
-                margin-bottom: 4px;
+                font-size: 16px;
+            }
+    
+            &:hover {
+                border-color: $hover-grey;
+            }
+    
+            &.disabled {
+                color: $default-grey;
+            }
+    
+            &.error {
+                border-color: $danger;
+            }
+        }
+
+        
+
+        input[type="range"] {
+            display: block;
+            -webkit-appearance: none;
+            width: calc(100% - 8px);
+            height: 1px;
+            background: $grey-font;
+            border-radius: $bdr;
+            margin: 0 auto;
+            outline: 0;
+            position: absolute;
+            bottom: 1px;
+            left: 4px;
+            z-index: 10;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                background-color: $primary-color;
+                background-image: url(../icons/range-default.svg);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: ease-in-out 0.3s;
+                z-index: 11;
+
+                &:hover {
+                    background-image: url(../icons/range-hover.svg);
+                }
+
+                &:active {
+                    background-image: url(../icons/range-active.svg);
+
+                    
+                }
             }
 
-            .calculator__fake-input,  .calculator__input {
-                padding: 12px;
-                border: 1px solid $default-grey;
-                border-radius: $bdr;
-                width: 100%;
-                color: $dark-font;
-                font-family: inherit;
-                position: relative;
+            &[data-type="number"] {
 
-                span {
-                    font-size: 16px;
-                }
-        
-                &:hover {
-                    border-color: $hover-grey;
-                }
-        
-                &.disabled {
-                    color: $default-grey;
-                }
-        
-                &.error {
-                    border-color: $danger;
+                & + .calculator__input-progress::after {
+                    content: '₽';
+                    color: $grey-font;
+                    padding-left: 8px;
                 }
             }
 
             
+            &.active {
+                & + span {
+                    color: $black;
+                }
 
-            input[type="range"] {
-                display: block;
-                -webkit-appearance: none;
-                width: calc(100% - 8px);
-                height: 1px;
-                background: $grey-font;
-                border-radius: $bdr;
-                margin: 0 auto;
-                outline: 0;
-                position: absolute;
-                bottom: 1px;
-                left: 4px;
-                z-index: 10;
+                &~.range-progress {
+                    background: $primary-color-active;
+                }
+            }
+
+            &.disabled {
+                pointer-events: none;
+
+                & + span {
+                    color: $grey-font;
+                }
+
+                &~.range-progress {
+                    background: $grey-font;
+                }
 
                 &::-webkit-slider-thumb {
-                    -webkit-appearance: none;
-                    background-color: $primary-color;
-                    background-image: url(../icons/range-default.svg);
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    transition: ease-in-out 0.3s;
-                    z-index: 11;
-
-                    &:hover {
-                        background-image: url(../icons/range-hover.svg);
-                    }
-
-                    &:active {
-                        background-image: url(../icons/range-active.svg);
-
-                        
-                    }
-                }
-
-                &[data-type="number"] {
-
-                    & + .calculator__input-progress::after {
-                        content: '₽';
-                        color: $grey-font;
-                        padding-left: 8px;
-                    }
-                }
-
-                
-                &.active {
-                    & + span {
-                        color: $black;
-                    }
-
-                    &~.range-progress {
-                        background: $primary-color-active;
-                    }
-                }
-
-                &.disabled {
-                    pointer-events: none;
-
-                    & + span {
-                        color: $grey-font;
-                    }
-
-                    &~.range-progress {
-                        background: $grey-font;
-                    }
-
-                    &::-webkit-slider-thumb {
-                        background-image: url(../icons/range-disabled.svg);
-                    }
+                    background-image: url(../icons/range-disabled.svg);
                 }
             }
+        }
 
-            .range-progress {
-                display: inline-block;
-                height: 1px;
-                background: $primary-color;
-                position: absolute;
-                bottom: 0;
-                left: 4px;
-                margin: 0;
-                max-width: 97%;
-            }
+        .range-progress {
+            display: inline-block;
+            height: 1px;
+            background: $primary-color;
+            position: absolute;
+            bottom: 0;
+            left: 4px;
+            margin: 0;
+            max-width: 97%;
         }
     }
 
@@ -370,4 +371,96 @@ $bdr: 4px;
         }
     }
 
+    .calc-popup {
+        display: none;
+        &--active {
+            display: block;
+        }
+
+        &__body {
+            position: fixed;
+            width: 550px;
+            top: 47%;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            background: $white;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+        }
+    
+        &__bg {
+            background: rgba(0,0,0,0.6);
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+        }
+    
+        &__close {
+            position: absolute;
+            right: -50px;
+            top: -40px;
+            width: 32px;
+            height: 32px;
+            transition: ease 0.3s;
+            cursor: pointer;
+            &:hover {
+                &:before, &:after {
+                    background-color: $white;
+                }
+            }
+            &:before, &:after {
+                position: absolute;
+                left: 15px;
+                content: ' ';
+                height: 33px;
+                width: 2px;
+                background-color: $light-grey;
+              }
+              &:before {
+                transform: rotate(45deg);
+              }
+              &:after {
+                transform: rotate(-45deg);
+              }
+        }
+
+        &__title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: $black;
+        }
+
+        &__message {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: $dark-font;
+        }
+
+        &__btn {
+            max-width: 300px;
+            color: $white;
+            background: $primary-color;
+            margin-top: 10px;
+
+            &:hover, &:active {
+                color: $primary-color;
+                background: $white;
+            }
+
+            &:disabled {
+                background-color: $white;
+                color: #ababab;
+                border-color: #ababab;
+                pointer-events: none;
+            }
+        }
+    }
 }
+

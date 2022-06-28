@@ -7,15 +7,15 @@
     },
     "full_subsidy": {
         "month_payment": "12 870",
-        "percent": "от 0,1%",
-        "subsidy_period": "от 1 года",
+        "percent": "от 0,2%",
+        "subsidy_period": "до 30 лет",
         "overpayment": "385 000"
     },
     "basic": {
         "month_payment": "12 870",
-        "percent": "от 0,1%",
-        "subsidy_period": "от 1 года",
-        "overpayment": "385 000"
+        "percent": "8,7%",
+        "subsidy_period": "10 лет",
+        "overpayment": "7 000 000"
     }
 
 }

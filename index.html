@@ -36,7 +36,7 @@
                         <span class="range-progress"></span>
                     </div>
                     <div class="divider"></div>
-                    <button class="calculator__btn">Получить консультацию</button>
+                    <button class="calculator__btn"  type="button" data-open="feedback-popup">Получить консультацию</button>
                 </form>
             </div>
             <div class="calculator__data calculator__data--active" id="family">
@@ -242,12 +242,34 @@
             </div>
         </div>
         
+        <div class="calculator__feedback-popup calc-popup ">
+            <div class="calc-popup__bg"></div>
+            <div class="calc-popup__body">
+                <div class="calc-popup__close"></div>
+                <div class="calc-popup__content">
+                    <p class="calc-popup__title">Оставить заявку</p>
+                    <p class="calc-popup__message">Оставьте свой номер телефона и мы подберем для вас самое выгодное предложение</p>
+                    <form action="/data.json" class="calc-popup__form" name="feedback_form">
+                        <div class="calculator__field">
+                            <input class="calculator__input" type="text" name="name" autocomplete="given-name" placeholder="Ваше имя"/>
+                        </div>
+                        <div class="calculator__field">
+                            <input class="calculator__input" type="text" name="phone" placeholder="Телефон"/>
+                        </div>
+                        <button type="submit" class="calculator__btn calc-popup__btn submit-btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+
+    
 
     <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
     <script defer type="module"  src="script.js"></script>
 </body>
 </html>

@@ -38,7 +38,7 @@ class Calculator {
 
         $(this.rangeInputs).on( 'blur', (e) => {
             if ($(e.target).data("type") === "years") {
-                e.target.value = `${e.target.value} ${this.declOfNum(e.target.value, ['год', 'года', 'лет'])}`
+                e.target.value = `${(e.target.value).replace(/[^0-9]/g, '')} ${this.declOfNum(e.target.value, ['год', 'года', 'лет'])}`
             } else  {
                 e.target.value = this.getLocaleStringFromNumber(e.target.value)
             }
@@ -97,7 +97,10 @@ class Calculator {
             success: (data) => {
                this.appendDataToTabs(data)
             },
-            
+            error: ({err}) => {
+                alert('Что-то пошло не так...')
+                throw Error(err)
+            }
         });
     }
 
@@ -159,7 +162,7 @@ class Calculator {
      * @returns {string}
      */
     getLocaleStringFromNumber(num) {
-        return parseInt([...num].map(item => item.trim()).join('')).toLocaleString()
+        return parseInt([...num.replace(/[^0-9]/g, '')].map(item => item.trim()).join('')).toLocaleString()
     }
 
 
