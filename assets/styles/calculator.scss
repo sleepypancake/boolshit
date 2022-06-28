@@ -379,7 +379,7 @@ $bdr: 4px;
 
         &__body {
             position: fixed;
-            width: 550px;
+            width: 100vw;
             top: 47%;
             left: 50%;
             right: 50%;
@@ -389,6 +389,9 @@ $bdr: 4px;
             border-radius: 12px;
             padding: 40px;
             text-align: center;
+            @media (min-width: 768px) {
+                width: 550px;
+            }
         }
     
         &__bg {
@@ -403,12 +406,18 @@ $bdr: 4px;
     
         &__close {
             position: absolute;
-            right: -50px;
-            top: -40px;
+            right: 15px;
+            top: 15px;
             width: 32px;
             height: 32px;
             transition: ease 0.3s;
             cursor: pointer;
+
+            @media (min-width: 768px) {
+                right: -50px;
+                top: -40px;
+            }
+
             &:hover {
                 &:before, &:after {
                     background-color: $white;
