@@ -187,7 +187,7 @@
 }
 
 .calculator__field .calculator__fake-input.disabled, .calculator__field .calculator__input.disabled {
-  color: #dedede;
+  color: #ababab;
 }
 
 .calculator__field .calculator__fake-input.error, .calculator__field .calculator__input.error {
