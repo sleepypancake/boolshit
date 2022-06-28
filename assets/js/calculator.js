@@ -75,18 +75,6 @@ class Calculator {
             e.preventDefault();
             this.setRangeProgressFromInput(e.target)
         });
-
-        // $(this.rangeInputs).on( 'change', (e) => {
-        //     e.preventDefault();
-        //     const { min, max } = this.getMinMaxValuesForInput(e.target)
-        //     item.value = sliderMin
-        //     $rangeProgressbar.css('width', this.rangeToPersent(sliderMin, sliderMax, sliderMin) + '%')
-        //     if ( valueFromEl >= min && valueFromEl <= max) {
-        //         item.classList.remove('error')
-        //         $rangeSlider.val(valueFromEl)
-        //         $rangeProgressbar.css('width', this.rangeToPersent(min, max, valueFromEl) + '%')
-        //     }
-        // });
     }
 
     setRangeProgressFromSlider(item) {
