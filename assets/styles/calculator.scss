@@ -160,8 +160,9 @@ $bdr: 4px;
                 border-color: $hover-grey;
             }
     
-            &.disabled {
+            &.disabled, &:disabled {
                 color: $dark-font;
+                background-color: $white;
             }
     
             &.error {

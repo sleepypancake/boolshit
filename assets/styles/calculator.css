@@ -186,8 +186,9 @@
   border-color: #cacaca;
 }
 
-.calculator__field .calculator__fake-input.disabled, .calculator__field .calculator__input.disabled {
+.calculator__field .calculator__fake-input.disabled, .calculator__field .calculator__fake-input:disabled, .calculator__field .calculator__input.disabled, .calculator__field .calculator__input:disabled {
   color: #3A393C;
+  background-color: #fff;
 }
 
 .calculator__field .calculator__fake-input.error, .calculator__field .calculator__input.error {
