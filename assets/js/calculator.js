@@ -71,10 +71,22 @@ class Calculator {
             }
         });
 
-        $(this.rangeInputs).on( 'input', (e) => {
+        $(this.rangeInputs).on( 'change', (e) => {
             e.preventDefault();
             this.setRangeProgressFromInput(e.target)
         });
+
+        // $(this.rangeInputs).on( 'change', (e) => {
+        //     e.preventDefault();
+        //     const { min, max } = this.getMinMaxValuesForInput(e.target)
+        //     item.value = sliderMin
+        //     $rangeProgressbar.css('width', this.rangeToPersent(sliderMin, sliderMax, sliderMin) + '%')
+        //     if ( valueFromEl >= min && valueFromEl <= max) {
+        //         item.classList.remove('error')
+        //         $rangeSlider.val(valueFromEl)
+        //         $rangeProgressbar.css('width', this.rangeToPersent(min, max, valueFromEl) + '%')
+        //     }
+        // });
     }
 
     setRangeProgressFromSlider(item) {
@@ -93,17 +105,27 @@ class Calculator {
         const valueFromEl = parseInt([...item.value].map(item => item.trim()).join(''))
         const $rangeProgressbar = $(item).siblings('.range-progress');
         const $rangeSlider = $(item).siblings('input[type="range"]');
-        const sliderMin = +$rangeSlider[0].min;
-        const sliderMax = +$rangeSlider[0].max;
-        if ( valueFromEl >= sliderMin && valueFromEl <= sliderMax) {
+        const { min, max } = this.getMinMaxValuesForInput(item)
+        if ( valueFromEl >= min && valueFromEl <= max) {
             item.classList.remove('error')
             $rangeSlider.val(valueFromEl)
-            $rangeProgressbar.css('width', this.rangeToPersent(sliderMin, sliderMax, valueFromEl) + '%')
+            $rangeProgressbar.css('width', this.rangeToPersent(min, max, valueFromEl) + '%')
+            this.getTabData()
         } else {
             item.classList.add('error')
+            item.value = min
+            $rangeProgressbar.css('width', this.rangeToPersent(min, max, min) + '%')
+            $rangeSlider.val(min)
         }
 
         // item.value = this.getLocaleStringFromNumber(item.value)
+    }
+
+    getMinMaxValuesForInput(item) {
+        const $rangeSlider = $(item).siblings('input[type="range"]');
+        const sliderMin = +$rangeSlider[0].min;
+        const sliderMax = +$rangeSlider[0].max;
+        return {min: sliderMin, max: sliderMax}
     }
 
     getTabData() {
