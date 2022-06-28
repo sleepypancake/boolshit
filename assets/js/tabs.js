@@ -63,9 +63,9 @@ class TabsSwitcher {
 
         const data = {
             subsidy_type: item.id,
-            flat_price: flat_price.value,
+            flat_price: parseInt([...flat_price.value.replace(/[^0-9]/g, '')].map(item => item.trim()).join('')),
             first_payment: first_payment.value,
-            subsidy_period: subsidy_period.value * 12, // передавать значение в месяцах
+            subsidy_period: subsidy_period.value, // передавать значение в месяцах
         }
 
         $.ajax({

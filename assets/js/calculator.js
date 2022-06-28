@@ -82,7 +82,9 @@ class Calculator {
         const $rangeOutput = $(item).siblings('.calculator__input-progress');
         $rangeOutput[0].classList.remove('error')
         if ($(item).data("type") === "years") {
-            $rangeOutput.val(`${item.value} ${this.declOfNum(item.value, ['год', 'года', 'лет'])}`)
+            const years = Math.floor(item.value / 12)
+            const months = item.value % 12
+            $rangeOutput.val(`${years} ${this.declOfNum(years, ['год', 'года', 'лет'])} ${months ? months : ''} ${months ? this.declOfNum(months, ['месяц', 'месяца', 'месяцев']) : ''}`)
         } else  {
             $rangeOutput.val(this.getLocaleStringFromNumber(item.value))
         }
@@ -94,11 +96,19 @@ class Calculator {
         const $rangeProgressbar = $(item).siblings('.range-progress');
         const $rangeSlider = $(item).siblings('input[type="range"]');
         const { min, max } = this.getMinMaxValuesForInput(item)
-        if ( valueFromEl >= min && valueFromEl <= max) {
+        console.log(item.dataset.type)
+        if ( valueFromEl >= min && valueFromEl <= max && item.dataset.type !== 'years') {
             item.classList.remove('error')
             $rangeSlider.val(valueFromEl)
             $rangeProgressbar.css('width', this.rangeToPersent(min, max, valueFromEl) + '%')
             this.getTabData()
+        } else if (item.dataset.type === 'years') {
+            console.log('ldfldflld')
+            const years = Math.floor(item.value / 12)
+            const months = item.value % 12
+            $rangeSlider.val(valueFromEl)
+            $rangeProgressbar.css('width', this.rangeToPersent(min, max, item.value) + '%')
+           item.value = `${years} ${this.declOfNum(years, ['год', 'года', 'лет'])} ${months ? months : ''} ${months ? this.declOfNum(months, ['месяц', 'месяца', 'месяцев']) : ''}`
         } else {
             item.classList.add('error')
             item.value = min
@@ -121,9 +131,9 @@ class Calculator {
 
         const data = {
             subsidy_type: this.activeTab.id,
-            flat_price: flat_price.value,
+            flat_price: parseInt([...flat_price.value.replace(/[^0-9]/g, '')].map(item => item.trim()).join('')),
             first_payment: first_payment.value,
-            subsidy_period: subsidy_period.value * 12, // передавать значение в месяцах
+            subsidy_period: subsidy_period.value, // передавать значение в месяцах
         }
 
         $.ajax({
