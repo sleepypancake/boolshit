@@ -18,11 +18,13 @@ class FeedbackPopup {
     bindEvents() {
         $(this.feedbackOpeners).on('click', (e) => {
             e.preventDefault()
+            document.body.classList.add('state_fixed')
             this.feedbackPopup.classList.add('calc-popup--active')
         })
 
         $(this.feedbackCloser).on('click', (e) => {
           e.preventDefault()
+          document.body.classList.remove('state_fixed')
           this.feedbackPopup.classList.remove('calc-popup--active')
         })
 
@@ -77,6 +79,7 @@ class FeedbackPopup {
       `
       this.feedbackContent.innerHTML = thanksHTML
       setTimeout(() => {
+        document.body.classList.remove('state_fixed')
         this.feedbackPopup.classList.remove('calc-popup--active')
       }, 5000)
     }

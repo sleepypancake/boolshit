@@ -125,9 +125,9 @@ $bdr: 4px;
                 pointer-events: none;
             }
 
-            &:hover {
-                color: $black;
-            }
+            // &:hover {
+            //     color: $black;
+            // }
         }
     }
 
@@ -313,12 +313,16 @@ $bdr: 4px;
             margin-bottom: 16px;
         }
 
-        &--standart {
+        &.partial_subsidy {
             background-color: $white;
             border-color: $grey-font;
+
+            .highlighted {
+                color: $primary-color;
+            }
         }
 
-        &--best {
+        &.full_subsidy {
             background-color: $primary-color;
             border-color: $primary-color;
             color: $white;
@@ -327,7 +331,7 @@ $bdr: 4px;
             }
         }
 
-        &--basic {
+        &.basic {
             background-color: $default-grey;
             border-color: $default-grey;
         } 
@@ -359,10 +363,6 @@ $bdr: 4px;
                 }
                 &-value {
                     font-size: 18px;
-                    &.highlighted {
-                        color: $primary-color;
-                        font-weight: 600;
-                    }
                     &[data-type="percent"] {
                         font-weight: 600;
                     }

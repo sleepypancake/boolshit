@@ -152,10 +152,6 @@
   pointer-events: none;
 }
 
-.calculator__tabs .calculator__tab:hover {
-  color: #333;
-}
-
 .calculator__form {
   width: 100%;
 }
@@ -335,22 +331,26 @@
   }
 }
 
-.calculator__card--standart {
+.calculator__card.partial_subsidy {
   background-color: #fff;
   border-color: #ababab;
 }
 
-.calculator__card--best {
+.calculator__card.partial_subsidy .highlighted {
+  color: #309B42;
+}
+
+.calculator__card.full_subsidy {
   background-color: #309B42;
   border-color: #309B42;
   color: #fff;
 }
 
-.calculator__card--best .calculator__card__info-col-name {
+.calculator__card.full_subsidy .calculator__card__info-col-name {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.calculator__card--basic {
+.calculator__card.basic {
   background-color: #dedede;
   border-color: #dedede;
 }
@@ -403,11 +403,6 @@
 
 .calculator__card__info-col-value {
   font-size: 18px;
-}
-
-.calculator__card__info-col-value.highlighted {
-  color: #309B42;
-  font-weight: 600;
 }
 
 .calculator__card__info-col-value[data-type="percent"] {
