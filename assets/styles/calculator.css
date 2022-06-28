@@ -187,7 +187,7 @@
 }
 
 .calculator__field .calculator__fake-input.disabled, .calculator__field .calculator__input.disabled {
-  color: #ababab;
+  color: #3A393C;
 }
 
 .calculator__field .calculator__fake-input.error, .calculator__field .calculator__input.error {
@@ -276,10 +276,10 @@
   border: 1px solid #309B42;
   border-radius: 4px;
   background: #fff;
-  padding: 18px 10px 16px;
+  padding: 15px 5px 11px 5px;
   text-transform: uppercase;
   font-size: 12px;
-  line-height: 1.2;
+  line-height: 19px;
   color: #309B42;
   -webkit-transition: ease-in-out 0.3s;
   transition: ease-in-out 0.3s;
