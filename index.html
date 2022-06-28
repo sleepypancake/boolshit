@@ -14,98 +14,228 @@
             <div class="calculator__calc">
                 <p class="calculator__subtitle">Вид ипотеки:</p>
                 <div class="calculator__tabs">
-                    <div class="calculator__tab" data-tab="family">Семейная</div>
+                    <div class="calculator__tab calculator__tab--active" data-tab="family">Семейная</div>
                     <div class="calculator__tab" data-tab="it">IT ипотека </div>
                     <div class="calculator__tab"  data-tab="gospod">Гос поддержка 2022</div>
                 </div>
-                <form action="" class="calculator__form">
+                <form action="" class="calculator__form" name="calculator_form">
                     <div class="calculator__field">
                         <span>Стоимость квартиры</span>
-                        <div class="calculator__fake-input disabled">
-                            <span>2 120 000</span>
-                        </div>
+                        <input class="calculator__input disabled" type="text" name="flat_price" placeholder="Введите число" value="6067295" readonly="readonly"/>
                     </div>
                     <div class="calculator__field">
-                        <div class="calculator__fake-input">
-                            <input type="range" name="first-payment" value="898246" min="800000" max="5389474" data-type="number"/>
-                            <span class="range-output"></span>
-                            <span class="range-progress"></span>
-                        </div>
+                        <span>Первый взнос</span>
+                        <input type="range" name="first_payment" min="800000" max="5389474" data-type="number"/>
+                        <input class="calculator__input calculator__input-progress"  value="898 246" type="text" placeholder="Введите число"/>
+                        <span class="range-progress"></span>
                     </div>
                     <div class="calculator__field">
-                        <div class="calculator__fake-input">
-                            <input type="range"  class="disabled"  name="credit-length" value="10" min="1" max="30"  data-type="years"/>
-                            <span  class="range-output"></span>
-                            <span class="range-progress"></span>
-                        </div>
+                        <span>Срок ипотеки</span>
+                        <input type="range" name="subsidy_period"  min="1" max="30" data-type="years"/>
+                        <input class="calculator__input calculator__input-progress" value="10 лет" type="text" data-type="years" placeholder="Введите число"/>
+                        <span class="range-progress"></span>
                     </div>
                     <div class="divider"></div>
-                    <button class="btn calculator__btn"></button>
+                    <button class="calculator__btn">Получить консультацию</button>
                 </form>
             </div>
-            <div class="calculator__data">
+            <div class="calculator__data calculator__data--active" id="family">
                 <p class="calculator__subtitle">Семейная ипотека с субсидированием</p>
-                <p class="calculator__highlight"><span class="highlighted">Ипотека</span>для всех семей с детьми на условиях поддержки субсидированием</p>
-                <div class="calc-card calc-card--standart">
-                    <p class="calc-card__title">Субсидирование на 1-2 года </p>
-                    <div class="calc-card__grid">
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Ежемесячный платеж</span>
-                            <span class="calc-card__grid-col-value">12 870 ₽</span>
+                <p class="calculator__highlight"><span class="highlighted">Ипотека </span>для всех семей с детьми на условиях поддержки субсидированием</p>
+                <div class="calculator__card calculator__card--standart" data-type="partial_subsidy">
+                    <p class="calculator__card__title">Субсидирование на 1-2 года </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
                         </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Процентная ставка</span>
-                            <span class="calc-card__grid-col-value highlighted">от 0,1%</span>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value highlighted" data-type="percent">от 0,1%</span>
                         </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Срок субсидирования</span>
-                            <span class="calc-card__grid-col-value">от 1 года</span>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
                         </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">К стоимости квартиры</span>
-                            <span class="calc-card__grid-col-value">+ 385 000 ₽</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="calc-card calc-card--best">
-                    <p class="calc-card__title">Субсидирование на 1-2 года </p>
-                    <div class="calc-card__grid">
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Ежемесячный платеж</span>
-                            <span class="calc-card__grid-col-value">12 870 ₽</span>
-                        </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Процентная ставка</span>
-                            <span class="calc-card__grid-col-value highlighted">от 0,1%</span>
-                        </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Срок субсидирования</span>
-                            <span class="calc-card__grid-col-value">от 1 года</span>
-                        </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">К стоимости квартиры</span>
-                            <span class="calc-card__grid-col-value">+ 385 000 ₽</span>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
                         </div>
                     </div>
                 </div>
-                <div class="calc-card calc-card--basic">
-                    <p class="calc-card__title">Субсидирование на 1-2 года </p>
-                    <div class="calc-card__grid">
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Ежемесячный платеж</span>
-                            <span class="calc-card__grid-col-value">12 870 ₽</span>
+                <div class="calculator__card calculator__card--best" data-type="full_subsidy">
+                    <p class="calculator__card__title">Субсидирование на весь срок </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
                         </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Процентная ставка</span>
-                            <span class="calc-card__grid-col-value highlighted">от 0,1%</span>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="percent"><b>от 0,1%</b></span>
                         </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">Срок субсидирования</span>
-                            <span class="calc-card__grid-col-value">от 1 года</span>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
                         </div>
-                        <div class="calc-card__grid-col">
-                            <span class="calc-card__grid-col-name">К стоимости квартиры</span>
-                            <span class="calc-card__grid-col-value">+ 385 000 ₽</span>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator__card calculator__card--basic" data-type="basic">
+                    <p class="calculator__card__title">Базовая </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="percent"><b>8,7%</b></span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__data calculator__data" id="it">
+                <p class="calculator__subtitle">IT ипотека с субсидированием</p>
+                <p class="calculator__highlight"><span class="highlighted">Ипотека </span>для всех семей с детьми на условиях поддержки субсидированием</p>
+                <div class="calculator__card calculator__card--standart" data-type="partial_subsidy">
+                    <p class="calculator__card__title">Субсидирование на 1-2 года </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value highlighted" data-type="percent">от 0,1%</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator__card calculator__card--best" data-type="full_subsidy">
+                    <p class="calculator__card__title">Субсидирование на весь срок </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="percent"><b>от 0,1%</b></span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator__card calculator__card--basic" data-type="basic">
+                    <p class="calculator__card__title">Базовая </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="percent"><b>8,7%</b></span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__data calculator__data" id="gospod">
+                <p class="calculator__subtitle">Гос поддержка с субсидированием</p>
+                <p class="calculator__highlight"><span class="highlighted">Ипотека </span>для всех семей с детьми на условиях поддержки субсидированием</p>
+                <div class="calculator__card calculator__card--standart" data-type="partial_subsidy">
+                    <p class="calculator__card__title">Субсидирование на 1-2 года </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value highlighted" data-type="percent">от 0,1%</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator__card calculator__card--best" data-type="full_subsidy">
+                    <p class="calculator__card__title">Субсидирование на весь срок </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="percent"><b>от 0,1%</b></span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator__card calculator__card--basic" data-type="basic">
+                    <p class="calculator__card__title">Базовая </p>
+                    <div class="calculator__card__info">
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Ежемесячный платеж</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="month_payment">12 870 ₽</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Процентная ставка</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="percent"><b>8,7%</b></span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">Срок субсидирования</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="subsidy_period">от 1 года</span>
+                        </div>
+                        <div class="calculator__card__info-col">
+                            <span class="calculator__card__info-col-name">К стоимости квартиры</span>
+                            <span class="calculator__card__info-col-value card-value" data-type="overpayment">+ 385 000 ₽</span>
                         </div>
                     </div>
                 </div>
@@ -115,9 +245,9 @@
     </div>
 
     <script
-  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
-    <script defer src="script.js"></script>
+    <script defer type="module"  src="script.js"></script>
 </body>
 </html>
