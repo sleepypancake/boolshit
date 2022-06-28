@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'MuseoSans';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   src: url('./museosanscyrl300.eot'); /* IE9 Compat Modes */
   src: url('./museosanscyrl300.woff2') format('woff2'), /* Super Modern Browsers */
        url('./museosanscyrl300.woff') format('woff'), /* Modern Browsers */
@@ -11,3 +11,35 @@
        url('./museosanscyrl300.svg') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+  font-family: 'MuseoSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./museosanscyrl500.eot'); /* IE9 Compat Modes */
+  src: url('./museosanscyrl500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./museosanscyrl500.woff') format('woff'), /* Modern Browsers */
+       url('./museosanscyrl500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./museosanscyrl500.svg') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./museosanscyrl700.eot'); /* IE9 Compat Modes */
+  src: url('./museosanscyrl700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./museosanscyrl700.woff') format('woff'), /* Modern Browsers */
+       url('./museosanscyrl700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./museosanscyrl700.svg') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./museosanscyrl900.eot'); /* IE9 Compat Modes */
+  src: url('./museosanscyrl900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./museosanscyrl900.woff') format('woff'), /* Modern Browsers */
+       url('./museosanscyrl900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./museosanscyrl900.svg') format('svg'); /* Legacy iOS */
+}

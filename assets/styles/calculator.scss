@@ -41,7 +41,7 @@ $bdr: 4px;
         font-size: 24px;
         line-height: 1.4;
         margin-bottom: 20px;
-        font-weight: 500;
+        font-weight: 700;
     }
 
     &__container {
@@ -70,7 +70,7 @@ $bdr: 4px;
         margin-bottom: 4px;
         font-size: 16px;
         line-height: 1.4;
-        font-weight: 500; 
+        font-weight: 700; 
     }
 
     &__highlight {
@@ -105,9 +105,11 @@ $bdr: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 300;
 
             @media (min-width: 1025px) {
                 height: 49px;
+                font-size: 14px;
             }
 
             &:first-child {
@@ -124,10 +126,6 @@ $bdr: 4px;
                 color: $white;
                 pointer-events: none;
             }
-
-            // &:hover {
-            //     color: $black;
-            // }
         }
     }
 
@@ -154,6 +152,7 @@ $bdr: 4px;
             color: $dark-font;
             font-family: inherit;
             position: relative;
+            font-weight: 300;
 
             span {
                 font-size: 16px;

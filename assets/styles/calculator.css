@@ -32,7 +32,7 @@
   font-size: 24px;
   line-height: 1.4;
   margin-bottom: 20px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .calculator__container {
@@ -79,7 +79,7 @@
   margin-bottom: 4px;
   font-size: 16px;
   line-height: 1.4;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .calculator__highlight {
@@ -128,11 +128,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-weight: 300;
 }
 
 @media (min-width: 1025px) {
   .calculator__tabs .calculator__tab {
     height: 49px;
+    font-size: 14px;
   }
 }
 
@@ -175,6 +177,7 @@
   color: #3A393C;
   font-family: inherit;
   position: relative;
+  font-weight: 300;
 }
 
 .calculator__field .calculator__fake-input span, .calculator__field .calculator__input span {
