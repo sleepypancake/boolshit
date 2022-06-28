@@ -132,9 +132,10 @@ class Calculator {
     }
 
     appendDataToTabs(data) {
+        const cardWrapper = this.activeTab.querySelector('.calculator__cards')
+        cardWrapper.innerHTML= ''
         for (let item in data) {
             const { month_payment,  percent, subsidy_period, overpayment } = data[item]
-            const cardWrapper = this.activeTab.querySelector('.calculator__cards')
             const card = this.htmlToElement(this.calculatorCardHtml)
             card.classList.add(item)
             const cardTitle = card.querySelector('.calculator__card__title')
